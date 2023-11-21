@@ -1,0 +1,38 @@
+{
+    "model_hyperparams": {
+        "num_chains": 10,
+        "norm_layers": true,
+        "res_connection": true,
+        "random_seed": [
+            0
+        ],
+        "scale_noise": [
+            0.001,
+            0.1,
+            0.01,
+            1.0
+        ],
+        "scale_noise_p": [
+            0.001,
+            0.1,
+            0.01,
+            1.0
+        ],
+        "lambda_sparse": [
+            1.0,
+            10.0,
+            50.0,
+            100.0,
+            500.0,
+            1000.0
+        ],
+        "sinkhorn_n_iter": 300
+    },
+    "training_hyperparams": {
+        "learning_rate": 1e-3,
+        "batch_size": 512,
+        "stardardize_data_mean": false,
+        "stardardize_data_std": false,
+        "max_epochs": 800
+    }
+}

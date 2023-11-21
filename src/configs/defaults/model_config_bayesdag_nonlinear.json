@@ -1,0 +1,21 @@
+{
+    "model_hyperparams": {
+        "lambda_sparse": 1.0,
+        "scale_noise": 0.1,
+        "random_seed": [
+            0,
+            1,
+            2,
+            3,
+            4
+        ],
+        "sinkhorn_n_iter": 500
+    },
+    "training_hyperparams": {
+        "learning_rate": 1e-3,
+        "batch_size": 128,
+        "max_epochs": 100,
+        "stardardize_data_mean": false,
+        "stardardize_data_std": false
+    }
+}

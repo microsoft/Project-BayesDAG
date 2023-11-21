@@ -1,0 +1,22 @@
+{
+    "model_hyperparams": {
+        "num_chains": 10,
+        "random_seed": [
+            0
+        ],
+        "scale_noise": 0.01,
+        "scale_noise_p": 0.1,
+        "sinkhorn_n_iter": 300,
+        "VI_norm": false,
+        "input_perm": false,
+        "lambda_sparse": 100,
+        "sparse_init": false
+    },
+    "training_hyperparams": {
+        "learning_rate": 1e-3,
+        "batch_size": 512,
+        "stardardize_data_mean": false,
+        "stardardize_data_std": false,
+        "max_epochs": 500
+    }
+}
