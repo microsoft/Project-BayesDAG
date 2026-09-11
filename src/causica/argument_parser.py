@@ -34,7 +34,7 @@ def get_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--model_dir", "-md", default=None, help="Directory containing the model.")
     parser.add_argument("--model_config", "-m", type=str, help="Path to JSON containing model configuration.")
-    parser.add_argument("--dataset_config", "-dc", type=str, default = "open_source/configs/dataset_config_causal_dataset.json", help="Path to JSON containing dataset configuration.")
+    parser.add_argument("--dataset_config", "-dc", type=str, default = "src/configs/dataset_config_causal_dataset.json", help="Path to JSON containing dataset configuration.")
     parser.add_argument("--impute_config", "-ic", type=str, help="Path to JSON containing impute configuration.")
     parser.add_argument("--objective_config", "-oc", type=str, help="Path to JSON containing objective configuration.")
 

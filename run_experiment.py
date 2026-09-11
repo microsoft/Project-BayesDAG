@@ -7,8 +7,13 @@ import os
 import sys
 from typing import List
 
-from evaluation_pipeline.aml_run_context import setup_run_context_in_aml
-from open_source.causica.run_experiment import get_parser, run_experiment_on_parsed_args, validate_args
+try:
+    from evaluation_pipeline.aml_run_context import setup_run_context_in_aml
+    aml = True
+except ImportError:
+    from src.causica.experiment.run_context import RunContext
+    aml = False
+from src.causica.run_experiment import get_parser, run_experiment_on_parsed_args, validate_args
 
 
 def get_parser_with_aml_args() -> argparse.ArgumentParser:
@@ -56,13 +61,16 @@ def main(user_args):
     # Overwrite default_configs_dir to handle different relative path
     # depending whether we run from run_experiment.py or open_source/common/run_experiment.py
     # TODO: find cleaner way of doing it
-    args.default_configs_dir = os.path.join("open_source", "configs")
+    args.default_configs_dir = os.path.join("src", "configs")
     # Prepare AML context
-    run_context = setup_run_context_in_aml(
-        args.aml_experiment_name,
-        compute_target=args.compute_target,
-        aml_config_filename=args.aml_config_filename,
-    )
+    if aml:
+        run_context = setup_run_context_in_aml(
+            args.aml_experiment_name,
+            compute_target=args.compute_target,
+            aml_config_filename=args.aml_config_filename,
+        )
+    else:
+        run_context = RunContext()
 
     run_experiment_on_parsed_args(args=args, run_context=run_context)
 

@@ -12,7 +12,7 @@ azure-keyvault-secrets = "4.4.0"
 azure-storage-blob = "12.11.0"
 azureml-sdk = "1.42.0"
 azureml-mlflow = "1.42.0"
-causica = {path = "./open_source", develop = true}
+causica = {path = "./src", develop = true}
 psutil = "^5.9.1"
 pyodbc = "^4.0.32"
 functorch = "^0.2.1"
